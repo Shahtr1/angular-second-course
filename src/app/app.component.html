@@ -1,3 +1,59 @@
-<h1>Angular</h1>
+<h4>Angular</h4>
 <!-- <courses></courses> -->
-<app-favourite [isFavourite]="post.isFavourite"></app-favourite>
+<!-- <app-favourite [isFavourite]="post.isFavourite" 
+    (change)="onFavouriteChanged($event)"></app-favourite> -->
+
+<!-- <app-panel>
+    <ng-container class="heading">Heading</ng-container>
+    <div class="body">
+        <h2>Body</h2>
+        <p>Some content here...</p>
+    </div>
+</app-panel>     -->
+
+<!-- <div *ngIf="courses.length > 0; else noCourses">
+    List of courses
+</div>
+<ng-template #noCourses>
+    No courses yet
+</ng-template> -->
+
+<!-- <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="viewMode == 'map'" data-toggle="pill" (click)="viewMode = 'map'">Map View</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="viewMode == 'list'" data-toggle="pill" (click)="viewMode = 'list'">List View</a>
+    </li>
+  </ul>
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">Map View Content</div>
+    <div *ngSwitchCase="'list'">List View Content</div>
+    <div *ngSwitchDefault>Otherwise</div>
+</div> -->
+
+<!-- <button (click)="onAdd()">Add</button>
+<ul>
+    <li *ngFor="let course of courses; even as isEven">
+        {{ course.name }} <span *ngIf="isEven">(EVEN)</span>
+        <button (click)="onChange(course)">Change</button>
+        <button (click)="onRemove(course)">Remove</button>
+    </li>
+</ul> -->
+
+<!-- <button (click)="loadCoursesFromServer()">Load Courses From Server(Emulation)</button>
+<ul>
+    <li *ngFor="let course of coursesFromServer; trackBy: trackCourse">
+        {{ course.name }}
+    </li>
+</ul> -->
+
+<button
+    [ngStyle]="{
+        'backgroundColor': canSave ? 'blue': 'gray',
+        'color': canSave ? 'white': 'black',
+        'fontWeight': canSave ? 'bold': 'normal'
+    }"    
+>
+    Save
+</button>

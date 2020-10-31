@@ -40,6 +40,8 @@ import { CoursesService } from './courses.service';
 
         {{ text | summary:10 }}
 
+        
+
     `
 })
 export class CoursesComponent{

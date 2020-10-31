@@ -1,1 +1,7 @@
-<span [style.backgroundColor]="isFavourite ? 'blue' : 'yellow'" (click)="onClick()">SPAN</span>
+<span 
+    (click)="onClick()"
+    [ngClass]="{
+        'blue': isFavourite,
+        'yellow': !isFavourite
+    }"
+    >SPAN</span>
