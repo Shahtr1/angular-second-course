@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 import { FavouriteComponent } from './favourite/favourite.component';
 import { PanelComponent } from './panel/panel.component';
+import { InputFormatDirective } from './input-format.directive';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { PanelComponent } from './panel/panel.component';
     CourseComponent,
     SummaryPipe,
     FavouriteComponent,
-    PanelComponent
+    PanelComponent,
+    InputFormatDirective,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,

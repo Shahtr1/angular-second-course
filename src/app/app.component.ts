@@ -8,6 +8,15 @@ import { FavouriteChangedEventArgs } from './favourite/favourite.component'
 })
 export class AppComponent {
   title = 'Angular app';
+
+  task = {
+    title: 'Review applications',
+    assignee: {
+      name: 'John Smith'
+    },
+    role: null
+  }
+
   post = {
     title: "Title",
     isFavourite: true
