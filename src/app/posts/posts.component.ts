@@ -34,9 +34,15 @@ export class PostsComponent implements OnInit{
           this.posts.splice(0, 0, post);
           console.log(response);
         },
-        error => {
-          alert('An unexpected error occurred.');
-          console.log(error);
+        (error: Response) => {
+          if(error.status === 400){
+            // this.form.setErrors(error)
+          }
+          else{
+            alert('An unexpected error occurred.');
+            console.log(error);
+          }    
+          
         });
   }
 
