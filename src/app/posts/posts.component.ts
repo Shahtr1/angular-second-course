@@ -13,9 +13,14 @@ export class PostsComponent implements OnInit{
 
   ngOnInit(){
     this.service.getPosts()
-      .subscribe(response => {
-        this.posts = response;
-      });
+      .subscribe(
+        response => {
+          this.posts = response;
+        }, 
+        error => {
+          alert('An unexpected error occurred.');
+          console.log(error);
+        });
   }
 
   createPost(input: HTMLInputElement){
@@ -23,26 +28,45 @@ export class PostsComponent implements OnInit{
     input.value = '';
 
     this.service.createPost(post)
-      .subscribe(response => {
-        post['id'] = response['id'];
-        this.posts.splice(0, 0, post);
-        console.log(response);
-      });
+      .subscribe(
+        response => {
+          post['id'] = response['id'];
+          this.posts.splice(0, 0, post);
+          console.log(response);
+        },
+        error => {
+          alert('An unexpected error occurred.');
+          console.log(error);
+        });
   }
 
   updatePost(post: HTMLInputElement){
     this.service.updatePost(post)
-      .subscribe(response => {
+      .subscribe(
+        response => {
         console.log(response);
-      });
+      },
+        error => {
+          alert('An unexpected error occurred.');
+          console.log(error);
+        });
     // this.http.patch(this.url, JSON.stringify(post));
   }
 
-  deletePost(post: HTMLInputElement){
-    this.service.deletePost(post)
-      .subscribe(response => {
-        let index = this.posts.indexOf(post);
-        this.posts.splice(index, 1);
-      });
+  deletePost(post){
+    this.service.deletePost(post.id)
+      .subscribe(
+        response => {
+          let index = this.posts.indexOf(post);
+          this.posts.splice(index, 1);
+        }, 
+        (error: Response) => {
+          if(error.status === 404)
+            alert('This post has already been deleted.');
+          else{
+            alert('An unexpected error occurred.');
+            console.log(error);
+          }
+        });
   }
 }
