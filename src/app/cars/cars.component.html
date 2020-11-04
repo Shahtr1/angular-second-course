@@ -1,0 +1,18 @@
+
+<button class="btn btn-small btn-danger" (click)="onClickAdd()">Add</button>
+
+
+<ul class="list-group">
+
+
+    <li class="list-group-item" *ngFor="let user of users$ | async"> {{user.name}} 
+    
+        <span style="float: right;"> 
+            <button class="btn btn-small btn-danger" (click)="onClickDelete(user.id)">Delete</button>
+            <button class="btn btn-small btn-info" (click)="onClickUpdate(user)">Update</button>
+        
+        </span>
+    </li>
+    
+  </ul>
+

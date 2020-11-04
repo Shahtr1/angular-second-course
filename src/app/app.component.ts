@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { FavouriteChangedEventArgs } from './favourite/favourite.component'
 
 @Component({
@@ -6,7 +7,12 @@ import { FavouriteChangedEventArgs } from './favourite/favourite.component'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+
+
+
+  ngOnInit(): void {}
   title = 'Angular app';
 
   task = {

@@ -17,6 +17,9 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostService } from './services/post.service';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemHeroService } from './fake-api/db-service';
+import { CarsComponent } from './cars/cars.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,12 +33,14 @@ import { PostService } from './services/post.service';
     SignupFormComponent,
     NewCourseFormComponent,
     PostsComponent,
+    CarsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemHeroService, { delay: 1500 }),
   ],
   providers: [
     CoursesService,
